@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="container">
+      <div class="grid-container-1">
+        <div class="form-container">
+          <% if (formValues && formValues._id) { %>
+          <div class="title">Edit your Idea</div>
+          <% } else { %>
+          <div class="title">Save your Ideas</div>
+          <% } %>
+
+          <div class="subtext">Enter the details below</div>
+          <!-- form -->
+          <form action="/ideas" method="POST">
+            <div class="form-fields">
+              <% if (formValues && formValues._id) { %>
+
+              <input type="hidden" name="id" value="<%= formValues._id %>" />
+              <% } %> <% if (formValues && formValues.title) { %>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Title"
+                maxlength="20"
+                value="<%= formValues.title %>"
+                required
+              />
+              <% } else { %>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Title"
+                maxlength="20"
+                required
+              />
+              <% } %> <% if (formValues && formValues.description) { %>
+              <textarea
+                rows="4"
+                columns="40"
+                maxlength="150"
+                name="description"
+                placeholder="Description"
+                required
+              >
+<%= formValues.description %></textarea
+              >
+              <% } else { %>
+              <textarea
+                rows="4"
+                columns="40"
+                maxlength="150"
+                name="description"
+                placeholder="Description"
+                required
+              ></textarea>
+              <% } %>
+            </div>
+            <input type="submit" value="Save" class="submit" />
+          </form>
+        </div>
+      </div>
+      <!-- Ideas grid section -->
+      <div class="grid-container-2">
+        <div class="idea-container">
+          <% if ( ideas.length > 0 ) { %> <% ideas.forEach(idea =>{ %>
+          <div class="card">
+            <form>
+              <input type="hidden" name="idea-id" value="<%= idea._id %>" />
+              <!-- icon -->
+              <div class="bulb-icon">
+                <a class="a-tags" href="/vault/<%= idea._id %> ">
+                  <div class="edit">
+                    <i class="bx bxs-edit-alt bx-xs"></i>
+                    Edit
+                  </div>
+                </a>
+                <a class="a-tags" href="/vault/delete/<%= idea._id %> ">
+                  <div class="delete">
+                    <i class="bx bx-trash-alt bx-xs"></i>
+                    Delete
+                  </div>
+                </a>
+              </div>
+              <!-- title -->
+              <div class="card-title">
+                <%= idea.title %>
+                <div></div>
+              </div>
+              <!-- description -->
+              <div class="card-desc"><%= idea.description %></div>
+            </form>
+          </div>
+          <% }) %> <% } else { %>
+          <p>add ideas</p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/vault.js"></script>
+  </body>
+</html>

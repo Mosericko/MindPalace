@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --green: #00ba7c;
+  --dark-green: #009563;
+  --white: #ffffff;
+  --black: #212b36;
+  --text-color: #637381;
+  --form-bg: #f4f6f8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  max-width: 1200px;
+  min-height: 100vh;
+  overflow: auto;
+  margin: auto;
+  background-color: var(--form-bg);
+}
+
+nav {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  height: 64px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.button1 {
+  border: none;
+  text-decoration: none;
+  border: 1px solid var(--green);
+  padding: 10px 25px;
+  background: none;
+  border-radius: 5px;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+.button1:hover {
+  background-color: var(--green);
+  color: var(--white);
+  transition: 0.4s ease-in-out;
+}
+
+/* Main section */
+main {
+  width: 100%;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 400px 800px;
+  align-items: center;
+}
+.description {
+  width: 400px;
+}
+
+.description .welcome {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: small;
+}
+.description .welcome div {
+  width: 50px;
+  height: 2px;
+  background-color: #00ba7c;
+}
+
+.description .main-desc {
+  margin-top: 0.5rem;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--black);
+  font-family: "Barlow", sans-serif;
+}
+
+.description .more-info {
+  margin-top: 2rem;
+  color: var(--text-color);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.button {
+  margin-top: 3rem;
+  border: none;
+  text-decoration: none;
+  background-color: var(--green);
+  padding: 12px 32px;
+  border-radius: 0.5rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+}
+.button:hover {
+  background-color: var(--dark-green);
+}
+.illustration {
+  display: flex;
+  justify-content: end;
+}
+.illustration img {
+  width: 600px;
+  height: 600px;
+}
+
+/* ################################## Vault ############################### */
+.container {
+  width: 100%;
+  display: grid;
+  margin-top: 50px;
+  grid-template-columns: 350px 850px;
+  column-gap: 2rem;
+}
+.form-container {
+  background-color: var(--white);
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 10px 50px;
+}
+.form-container .title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--green);
+  font-family: "Barlow", sans-serif;
+}
+.form-container .title div {
+  width: 100px;
+  height: 2px;
+  background-color: #00ba7c;
+  margin-top: 5px;
+}
+.form-container .subtext {
+  margin-top: 1rem;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.form-fields label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.form-fields input {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  background-color: var(--form-bg);
+}
+.form-fields textarea {
+  resize: none;
+  outline: none;
+  border: none;
+  background-color: var(--form-bg);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+.form-fields select {
+  background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>")
+    no-repeat;
+  background-position: calc(100% - 0.75rem) center !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  padding-right: 2rem !important;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: var(--form-bg);
+}
+
+.submit {
+  width: 100%;
+  border: none;
+  margin-top: 1rem;
+  text-decoration: none;
+  background-color: var(--green);
+  padding: 12px 32px;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  text-align: center;
+  cursor: pointer;
+  font-weight: 700;
+}
+/* ################################## Idea- cards ############################### */
+.grid-container-2 {
+  min-height: 80vh;
+}
+.idea-container {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.card {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 10px 50px;
+  background-color: var(--white);
+  width: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.card button {
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+.card .bulb-icon {
+  width: 100%;
+  height: 100px;
+  background-color: #3bb78f;
+  background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: var(--white);
+}
+.card-title {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 700;
+  margin-top: 1rem;
+  padding: 0 10px;
+}
+.card-title div {
+  width: 50px;
+  height: 2px;
+  font-size: 1rem;
+  background-color: var(--dark-green);
+  margin-top: 4px;
+}
+.card-desc {
+  font-size: 12px;
+  margin-top: 0.5rem;
+  font-weight: 300;
+  padding: 0 10px 15px;
+}
+.edit,
+.delete {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 35px;
+  font-family: "Public Sans";
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.edit:hover,
+.delete:hover {
+  color: #000;
+  transition: 0.4s ease-in-out;
+  font-weight: 700;
+}
+.a-tags,
+.a-tags:active {
+  text-decoration: none;
+  color: white;
+}
+
+/* ################################## 404 error ############################### */
+.not-found {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.not-found img {
+  width: 500px;
+  height: 500px;
+}

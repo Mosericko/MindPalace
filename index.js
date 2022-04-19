@@ -8,10 +8,11 @@ const app = express();
 
 //mongo db uri
 const dbURI = process.env.MONGO_URI;
+const port = process.env.PORT || 5000;
 
 mongoose
   .connect(dbURI)
-  .then((result) => app.listen(3000))
+  .then((result) => app.listen(port))
   .catch((err) => console.log(err));
 
 // register view engine

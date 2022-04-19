@@ -1,1 +1,1 @@
-# MindPalace-Moringa
+# MindPalace

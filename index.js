@@ -8,11 +8,19 @@ const app = express();
 
 //mongo db uri
 const dbURI = process.env.MONGO_URI;
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 mongoose
   .connect(dbURI)
-  .then((result) => app.listen(port))
+  .then((result) =>
+    app.listen(port, function () {
+      console.log(
+        "Express server listening on port %d in %s mode",
+        this.address().port,
+        app.settings.env
+      );
+    })
+  )
   .catch((err) => console.log(err));
 
 // register view engine
